@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Vehicle Rental System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Vehicle Rental System (Web)</h1>
+      <p>Pick a vehicle, enter days, calculate rent and confirm booking.</p>
+    </header>
+
+    <main>
+      <section class="form-card">
+        <label>Username
+          <input id="username" placeholder="Your name" />
+        </label>
+
+        <label>Vehicle Type
+          <select id="typeSelect">
+            <option value="Car">Car</option>
+            <option value="Bike">Bike</option>
+          </select>
+        </label>
+
+        <label>Vehicle
+          <select id="vehicleSelect"></select>
+        </label>
+
+        <label>Rent per day (auto)
+          <input id="rentInput" disabled />
+        </label>
+
+        <label>Days
+          <input id="daysInput" type="number" min="1" value="1" />
+        </label>
+
+        <div class="buttons">
+          <button id="calcBtn">Calculate Rent</button>
+          <button id="bookBtn">Confirm Booking</button>
+          <button id="clearBtn">Clear Bookings</button>
+        </div>
+
+        <div id="calcResult" class="result"></div>
+      </section>
+
+      <section class="table-card">
+        <h2>Bookings</h2>
+        <table id="bookingsTable">
+          <thead>
+            <tr><th>ID</th><th>User</th><th>Type</th><th>Vehicle</th><th>Days</th><th>Total</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+
+    <footer>
+      <small>Created for SemTreeGT 2021 — Demo web conversion of the Swing project.</small>
+    </footer>
+  </div>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Booking Successful</h3>
+      <p id="modalMsg"></p>
+      <button id="closeModal">Close</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
